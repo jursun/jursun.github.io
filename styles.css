@@ -1,0 +1,86 @@
+body {
+    background-color: lightgrey;
+}
+
+.button {
+    background-color: #592793;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    font-size: 16px;
+    margin: 4px;
+  }
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+    width: 1200px;
+}
+
+.player-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #9cb13d;
+    margin: 8px;
+    padding: 8px;
+    height: 280px;
+}
+
+.player-area {
+    background-color: #b9c957;
+    padding: 4px;
+    margin: 8px;
+    width: 300px;
+}
+
+.common-container {
+    display: flex;
+    flex-direction: row;
+    background-color: #9cb13d;
+    margin: 8px;
+    padding: 8px;
+    height: 280px;
+}
+
+.common-deck {
+    background-color: #b9c957;
+    padding: 4px;
+    margin: 8px;
+    width: 50%;
+}
+
+.actions-container {
+    display: flex;
+    flex-direction: row;
+    margin: 4px;
+}
+
+.player-name {
+    font-size: 1.25em;
+    font-family: Arial;
+    font-weight: 700;
+    line-height: 1.33;
+}
+
+.player-score {
+    font-size: 1.125em;
+    font-family: Courier;
+    font-weight: 600;
+    color: #9147ff;
+    line-height: 1.33;
+}
+
+.cards {
+    font-size: 1.125em;
+    font-family: Verdana;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.player-setup {
+    margin-top: 4px;
+    height: 2rem;
+    width: 500px;
+}
