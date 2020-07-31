@@ -131,18 +131,30 @@ function drawPileSmartPop() {
 
 function endRound() {
     disableHitFold();
-    enableDeal()
+    enableDeal();
+}
+
+function checkForLoser() {
+    players.forEach((player) => {
+        if (isLosingScore(player.score, players.length)) {
+            disableHitFold();
+            disableDeal();
+            alert("Congrats Scrum Master " + player.name + "!")
+        }
+    });
 }
 
 /* Event Handlers */
 function hit() {
     dealCardToPlayer();
     render();
+    checkForLoser();
 }
 
 function fold() {
     scoreLowestCard();
     render();
+    checkForLoser();
 }
 
 function deal() {
@@ -199,8 +211,9 @@ function renderPlayer(element, bgColor, name, score, hand) {
     if (element) {
         element.style.backgroundColor = bgColor;
         element.childNodes[1].innerHTML = name;
-        element.childNodes[3].innerHTML = "Score: " + sumCards(score);
-        element.childNodes[5].innerHTML = renderCards(hand, false);
+        element.childNodes[3].innerHTML = renderCards(score, false);
+        element.childNodes[5].innerHTML = "Score: " + sumCards(score);
+        element.childNodes[7].innerHTML = renderCards(hand, false);
     }
 }
 
@@ -265,4 +278,14 @@ function renderCards(cards, hide) {
 
 function sumCards(cards) {
     return cards.reduce((a,b) => a + b, 0);
+}
+
+function isLosingScore(score, totalPlayers) {
+    const total = sumCards(score);
+    console.log(totalPlayers + " | " + total);
+    return (totalPlayers >= 6 && total >= 11)
+        || (totalPlayers == 5 && total >= 13)
+        || (totalPlayers == 4 && total >= 16)
+        || (totalPlayers == 3 && total >= 21)
+        || (totalPlayers == 2 && total >= 31);
 }

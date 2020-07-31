@@ -6,8 +6,9 @@ body {
     background-color: #592793;
     border: none;
     color: white;
-    padding: 16px 32px;
+    white-space: nowrap;
     font-size: 16px;
+    padding: 16px 32px;
     margin: 4px;
   }
 
@@ -80,7 +81,7 @@ body {
 }
 
 .player-setup {
-    margin-top: 4px;
+    margin: 4px 8px;
     height: 2rem;
-    width: 500px;
+    width: 100%;
 }
