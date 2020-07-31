@@ -99,7 +99,7 @@ function popLowestCardInPlay() {
             tempHand.push(card);
         }
     }
-    players[p].hand = tempHand;
+    players[playerIndex].hand = tempHand;
     return lowestCard;
 }
 
